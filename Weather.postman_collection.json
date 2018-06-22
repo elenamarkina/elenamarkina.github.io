@@ -1,0 +1,440 @@
+{
+	"info": {
+		"_postman_id": "557aec57-afdb-4b29-99e3-653065b46dfe",
+		"name": "Weather",
+		"description": "https://www.openweathermap.org/current",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "by_city_name_code",
+			"description": "",
+			"item": []
+		},
+		{
+			"name": "by city id",
+			"description": "",
+			"item": [
+				{
+					"name": "by_city_id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d21302c3-1e50-4f0c-b4c6-8015e71901a3",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "api.openweathermap.org/data/2.5/weather?id=703448&appid=6d49c4b8291f3a59dd785b3788666ba6",
+							"host": [
+								"api",
+								"openweathermap",
+								"org"
+							],
+							"path": [
+								"data",
+								"2.5",
+								"weather"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "703448"
+								},
+								{
+									"key": "appid",
+									"value": "6d49c4b8291f3a59dd785b3788666ba6"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "By geographic coordinates",
+			"description": "",
+			"item": [
+				{
+					"name": "By_geographic_coordinates",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "011d7214-e966-479a-acaf-fede74bdb7f0",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "api.openweathermap.org/data/2.5/weather?lat=50.43&lon=30.52&appid=6d49c4b8291f3a59dd785b3788666ba6",
+							"host": [
+								"api",
+								"openweathermap",
+								"org"
+							],
+							"path": [
+								"data",
+								"2.5",
+								"weather"
+							],
+							"query": [
+								{
+									"key": "lat",
+									"value": "50.43"
+								},
+								{
+									"key": "lon",
+									"value": "30.52"
+								},
+								{
+									"key": "appid",
+									"value": "6d49c4b8291f3a59dd785b3788666ba6"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "By ZIP code",
+			"description": "",
+			"item": [
+				{
+					"name": "By_ZIP_code",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "fe3f8734-a915-42ef-9f5c-5a5d1cf351eb",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "api.openweathermap.org/data/2.5/weather?zip=02099,ua&appid=6d49c4b8291f3a59dd785b3788666ba6",
+							"host": [
+								"api",
+								"openweathermap",
+								"org"
+							],
+							"path": [
+								"data",
+								"2.5",
+								"weather"
+							],
+							"query": [
+								{
+									"key": "zip",
+									"value": "02099,ua"
+								},
+								{
+									"key": "appid",
+									"value": "6d49c4b8291f3a59dd785b3788666ba6"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cities within a rectangle zone",
+			"description": "",
+			"item": [
+				{
+					"name": "Cities_within_a_rectangle_zone",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "41194705-6a51-4e6b-b9cc-af39993af6ff",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://api.openweathermap.org/data/2.5/box/city?bbox=12,32,15,37,10&appid=6d49c4b8291f3a59dd785b3788666ba6",
+							"protocol": "http",
+							"host": [
+								"api",
+								"openweathermap",
+								"org"
+							],
+							"path": [
+								"data",
+								"2.5",
+								"box",
+								"city"
+							],
+							"query": [
+								{
+									"key": "bbox",
+									"value": "12,32,15,37,10"
+								},
+								{
+									"key": "appid",
+									"value": "6d49c4b8291f3a59dd785b3788666ba6"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cities in cycle",
+			"description": "",
+			"item": [
+				{
+					"name": "Cities_in_cycle",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b15afa50-2857-424f-b412-7eec19a11a04",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://api.openweathermap.org/data/2.5/find?lat=50.43&lon=30.52&cnt=10&appid=6d49c4b8291f3a59dd785b3788666ba6",
+							"protocol": "http",
+							"host": [
+								"api",
+								"openweathermap",
+								"org"
+							],
+							"path": [
+								"data",
+								"2.5",
+								"find"
+							],
+							"query": [
+								{
+									"key": "lat",
+									"value": "50.43"
+								},
+								{
+									"key": "lon",
+									"value": "30.52"
+								},
+								{
+									"key": "cnt",
+									"value": "10"
+								},
+								{
+									"key": "appid",
+									"value": "6d49c4b8291f3a59dd785b3788666ba6"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Call for several city IDs",
+			"description": "",
+			"item": [
+				{
+					"name": "Call_for_several_city_IDs",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e1b8cbb3-6247-4b8b-b2c9-f55def1a5564",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://api.openweathermap.org/data/2.5/group?id=696359,696050,691184&units=metric&appid=6d49c4b8291f3a59dd785b3788666ba6",
+							"protocol": "http",
+							"host": [
+								"api",
+								"openweathermap",
+								"org"
+							],
+							"path": [
+								"data",
+								"2.5",
+								"group"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "696359,696050,691184"
+								},
+								{
+									"key": "units",
+									"value": "metric"
+								},
+								{
+									"key": "appid",
+									"value": "6d49c4b8291f3a59dd785b3788666ba6"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "by_city_name",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1d05e4b2-82f2-405e-a898-d5bd13b330cc",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "api.openweathermap.org/data/2.5/weather?q=Kiev&appid=6d49c4b8291f3a59dd785b3788666ba6",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "Kiev"
+						},
+						{
+							"key": "appid",
+							"value": "6d49c4b8291f3a59dd785b3788666ba6"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "by_city_name_code",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1fb64292-75ee-4be6-95d4-39453f534b33",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "api.openweathermap.org/data/2.5/weather?q=Kiev,ua&appid=6d49c4b8291f3a59dd785b3788666ba6",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "Kiev,ua"
+						},
+						{
+							"key": "appid",
+							"value": "6d49c4b8291f3a59dd785b3788666ba6"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
